@@ -1,0 +1,34 @@
+import React from "react";
+import Plot from "react-plotly.js";
+const ConnectGapsBetweenData = () => {
+    var trace1 = {
+        x: [1, 2, 3, 4, 5, 6, 7, 8],
+        y: [10, 15, null, 17, 14, 12, 10, null, 15],
+        mode: 'lines+markers',
+        connectgaps: true
+      };
+      
+      var trace2 = {
+        x: [1, 2, 3, 4, 5, 6, 7, 8],
+        y: [16, null, 13, 10, 8, null, 11, 12],
+        mode: 'lines',
+        connectgaps: true
+      };
+      
+      var data = [trace1, trace2];
+      
+      var layout = {
+        width: 350, height: 300,
+        title: 'Connect the Gaps Between Data',
+        showlegend: false
+      };
+  return (
+    <div className="cool-shadow-plot" style={{ display: "inline-block" }}>
+      <Plot
+        data={data}
+        layout={layout}
+      />
+    </div>
+  );
+};
+export default ConnectGapsBetweenData;
